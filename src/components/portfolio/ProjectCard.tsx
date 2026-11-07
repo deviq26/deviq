@@ -16,17 +16,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
   return (
     <div
       onClick={() => onSelect(project)}
-      className="group flex flex-col justify-between rounded-2xl bg-white border border-[#e5e3dc] hover:border-teal-300 hover:shadow-xl hover:shadow-teal-900/5 transition-all duration-300 shadow-2xs cursor-pointer overflow-hidden"
+      className="group flex flex-col justify-between rounded-3xl bg-white border border-slate-200/90 hover:border-indigo-400 hover:shadow-[0_20px_40px_-8px_rgba(15,23,42,0.08)] transition-all duration-300 shadow-xs hover:-translate-y-1.5 cursor-pointer overflow-hidden"
     >
       <div>
         {/* Mockup visual */}
         <ProjectMockupGraphic project={project} />
 
         {/* Card Body */}
-        <div className="p-5 sm:p-6">
+        <div className="p-6">
           {/* Category & Demo Badge */}
           <div className="flex items-center justify-between gap-2 mb-3">
-            <span className="text-[11px] font-mono text-teal-800 font-bold tracking-wider">
+            <span className="text-xs font-mono text-indigo-600 font-bold tracking-wider">
               {project.categoryLabel[language]}
             </span>
             <Badge variant="cyan" size="sm">
@@ -35,12 +35,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
           </div>
 
           {/* Project Title */}
-          <h3 className="text-base sm:text-lg font-black text-slate-950 mb-2 group-hover:text-teal-800 transition-colors line-clamp-1">
+          <h3 className="text-lg font-black text-slate-950 mb-2 group-hover:text-indigo-700 transition-colors line-clamp-1">
             {project.title[language]}
           </h3>
 
           {/* Tagline / Summary */}
-          <p className="text-xs sm:text-sm text-slate-800 leading-relaxed mb-4 line-clamp-2 font-normal">
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 line-clamp-2 font-normal">
             {project.description[language]}
           </p>
 
@@ -49,7 +49,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
             {project.technologies.slice(0, 4).map((tech) => (
               <span
                 key={tech}
-                className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#f5f3ec] text-slate-900 border border-[#e2e0d8] font-bold"
+                className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-100 text-slate-800 border border-slate-200 font-medium"
               >
                 {tech}
               </span>
@@ -59,7 +59,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
       </div>
 
       {/* Card Footer with Details Action */}
-      <div className="px-5 sm:px-6 py-3.5 bg-[#faf9f6] border-t border-[#f0ede6] flex items-center justify-between text-xs font-bold text-teal-800 group-hover:text-teal-950">
+      <div className="px-6 py-3.5 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-indigo-700 group-hover:text-indigo-950 transition-colors">
         <span className="flex items-center gap-1.5">
           <Eye className="w-3.5 h-3.5" />
           <span>{t.portfolio.viewProject}</span>

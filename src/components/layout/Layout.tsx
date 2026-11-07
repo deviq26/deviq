@@ -6,20 +6,23 @@ import { ScrollToTopOnNavigate, FloatingScrollTopButton } from '../common/Scroll
 
 export const Layout: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#f7f6f2] text-slate-900 relative selection:bg-teal-500/20 selection:text-teal-950">
-      {/* Soft Pastel Ambient Background Layers */}
+    <div className="flex flex-col min-h-screen bg-[#f8fafc] text-slate-900 relative selection:bg-indigo-500/20 selection:text-indigo-950 font-sans">
+      {/* Precision Ambient Background Grid & Radial Cones */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Soft Pastel Blob 1: Warm Peach / Honey */}
-        <div className="absolute -top-24 -start-24 w-[500px] sm:w-[650px] h-[500px] sm:h-[650px] bg-gradient-to-br from-amber-200/30 via-orange-100/25 to-rose-100/15 rounded-full blur-[90px] animate-blob-1" />
+        {/* Top Centered Sapphire / Violet Ambient Cone */}
+        <div className="absolute top-0 start-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-b from-blue-100/40 via-indigo-100/25 to-transparent rounded-full blur-[110px] pointer-events-none" />
 
-        {/* Soft Pastel Blob 2: Soft Lilac / Lavender */}
-        <div className="absolute top-1/4 -end-32 w-[450px] sm:w-[600px] h-[450px] sm:h-[600px] bg-gradient-to-bl from-purple-200/25 via-indigo-100/25 to-sky-100/20 rounded-full blur-[100px] animate-blob-2" />
+        {/* Floating Ambient Mesh Orb 1 */}
+        <div className="absolute top-1/3 -start-32 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-100/35 via-blue-100/20 to-transparent rounded-full blur-[100px] animate-ambient-1 pointer-events-none" />
 
-        {/* Soft Pastel Blob 3: Soft Sage / Mint */}
-        <div className="absolute bottom-1/4 start-1/4 w-[400px] sm:w-[550px] h-[400px] sm:h-[550px] bg-gradient-to-tr from-teal-200/25 via-emerald-100/20 to-amber-100/15 rounded-full blur-[90px] animate-blob-3" />
+        {/* Floating Ambient Mesh Orb 2 */}
+        <div className="absolute bottom-1/3 -end-32 w-[550px] h-[550px] bg-gradient-to-bl from-purple-100/30 via-indigo-100/20 to-transparent rounded-full blur-[100px] animate-ambient-2 pointer-events-none" />
 
-        {/* Subtle Warm Grid */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-60" />
+        {/* Ultra-Fine Tech Dot Pattern */}
+        <div className="absolute inset-0 bg-dots-pattern opacity-40" />
+
+        {/* Subtle Horizontal Tech Scanline */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
       <ScrollToTopOnNavigate />

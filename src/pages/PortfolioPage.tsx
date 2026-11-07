@@ -36,14 +36,14 @@ export const PortfolioPage: React.FC = () => {
         />
 
         {/* Transparent Demo Project Notice banner */}
-        <div className="max-w-3xl mx-auto mb-10 p-4 rounded-2xl bg-amber-50/80 border border-amber-200/90 shadow-xs flex items-start gap-3 text-xs text-amber-950">
-          <AlertCircle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+        <div className="max-w-3xl mx-auto mb-10 p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200/80 shadow-xs flex items-start gap-3 text-xs text-indigo-950">
+          <AlertCircle className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
           <p className="leading-relaxed font-medium">{t.portfolio.demoNotice}</p>
         </div>
 
         {/* Filter Navigation Tabs */}
         <div className="flex items-center justify-center flex-wrap gap-2 mb-10">
-          <div className="inline-flex p-1.5 rounded-2xl bg-[#fdfcf9] border border-slate-200 shadow-xs backdrop-blur-md flex-wrap justify-center">
+          <div className="inline-flex p-1.5 rounded-2xl bg-slate-100/80 border border-slate-200/80 shadow-xs backdrop-blur-md flex-wrap justify-center">
             {filterTabs.map((tab) => (
               <button
                 key={tab.key}
@@ -51,8 +51,8 @@ export const PortfolioPage: React.FC = () => {
                 onClick={() => setSelectedCategory(tab.key)}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   selectedCategory === tab.key
-                    ? 'bg-slate-900 text-amber-50 shadow-md shadow-slate-900/15'
-                    : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100'
+                    ? 'bg-slate-900 text-white shadow-md shadow-slate-900/15'
+                    : 'text-slate-600 hover:text-slate-950 hover:bg-white/60'
                 }`}
               >
                 {tab.label}

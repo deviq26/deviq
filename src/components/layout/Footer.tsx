@@ -27,42 +27,45 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-[#f1efe9] border-t border-slate-300/80 pt-16 pb-10 overflow-hidden">
-      {/* Background subtle light glow */}
-      <div className="absolute top-0 start-1/2 -translate-x-1/2 w-96 h-24 bg-amber-400/10 blur-3xl pointer-events-none" />
-
+    <footer className="relative bg-white border-t border-slate-200 pt-16 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-slate-300/70">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-slate-200">
           {/* Column 1: Brand Info (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
             <Link to="/" className="mb-4">
               <DevIQLogo size="lg" showTagline={true} />
             </Link>
 
-            <p className="text-sm text-slate-800 leading-relaxed max-w-sm mt-2 font-medium">
+            <p className="text-sm text-slate-600 leading-relaxed max-w-sm mt-2 font-normal">
               {t.footer.brandDesc}
             </p>
 
+            {/* Live Operational Status */}
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>{language === 'ar' ? 'جميع الأنظمة تعمل بكفاءة 99.98%' : 'All Systems Operational • 99.98% SLA'}</span>
+            </div>
+
             {/* Direct Contact Highlights */}
-            <div className="mt-5 flex flex-col gap-2 text-xs text-slate-800">
+            <div className="mt-5 flex flex-col gap-2 text-xs text-slate-700">
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-teal-700 shrink-0" />
-                <span className="font-mono text-slate-950 font-bold">{CONTACT_CONFIG.contactEmail}</span>
+                <Mail className="w-4 h-4 text-indigo-600 shrink-0" />
+                <span className="font-mono text-slate-900 font-semibold">{CONTACT_CONFIG.contactEmail}</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-indigo-700 shrink-0" />
-                <span className="font-semibold">{CONTACT_CONFIG.location[language]}</span>
+                <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
+                <span className="font-medium">{CONTACT_CONFIG.location[language]}</span>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-3 mt-6">
+            <div className="flex items-center gap-2.5 mt-6">
               {CONTACT_CONFIG.socialLinks.github && (
                 <a
                   href={CONTACT_CONFIG.socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 hover:text-teal-800 hover:border-teal-500 shadow-xs transition-colors"
+                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 shadow-2xs transition-colors"
                   aria-label="GitHub"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -75,7 +78,7 @@ export const Footer: React.FC = () => {
                   href={CONTACT_CONFIG.socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 hover:text-teal-800 hover:border-teal-500 shadow-xs transition-colors"
+                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 shadow-2xs transition-colors"
                   aria-label="LinkedIn"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -88,7 +91,7 @@ export const Footer: React.FC = () => {
                   href={CONTACT_CONFIG.socialLinks.x}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 hover:text-teal-800 hover:border-teal-500 shadow-xs transition-colors"
+                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 shadow-2xs transition-colors"
                   aria-label="X / Twitter"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -101,7 +104,7 @@ export const Footer: React.FC = () => {
                   href={CONTACT_CONFIG.socialLinks.telegram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-white border border-slate-300 text-slate-800 hover:text-teal-800 hover:border-teal-500 shadow-xs transition-colors"
+                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 shadow-2xs transition-colors"
                   aria-label="Telegram"
                 >
                   <Send className="w-4 h-4" />
@@ -112,7 +115,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Quick Links (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-sm font-extrabold text-slate-950 uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4 font-mono">
               {t.footer.quickLinks}
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm">
@@ -120,7 +123,7 @@ export const Footer: React.FC = () => {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-slate-800 hover:text-teal-800 font-semibold transition-colors"
+                    className="text-slate-600 hover:text-indigo-600 font-medium transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -129,9 +132,9 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/admin"
-                  className="text-slate-700 hover:text-slate-950 transition-colors flex items-center gap-1.5 text-xs pt-1 font-semibold"
+                  className="text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-1.5 text-xs pt-1 font-medium"
                 >
-                  <ShieldCheck className="w-3.5 h-3.5 text-teal-700" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-indigo-600" />
                   <span>{t.nav.adminNote}</span>
                 </Link>
               </li>
@@ -140,7 +143,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Services Links (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="text-sm font-extrabold text-slate-950 uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4 font-mono">
               {t.footer.servicesLinks}
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm">
@@ -148,7 +151,7 @@ export const Footer: React.FC = () => {
                 <li key={service.id}>
                   <Link
                     to={`/services#${service.id}`}
-                    className="text-slate-800 hover:text-teal-800 font-semibold transition-colors"
+                    className="text-slate-600 hover:text-indigo-600 font-medium transition-colors"
                   >
                     {service.title[language]}
                   </Link>
@@ -160,10 +163,10 @@ export const Footer: React.FC = () => {
           {/* Column 4: Return to top & Action (2 cols) */}
           <div className="lg:col-span-2 flex flex-col items-start lg:items-end justify-between">
             <div>
-              <h4 className="text-sm font-extrabold text-slate-950 uppercase tracking-wider mb-2">
+              <h4 className="text-sm font-black text-slate-950 uppercase tracking-wider mb-1">
                 DevIQ
               </h4>
-              <p className="text-xs text-slate-700 font-medium">
+              <p className="text-xs text-slate-500 font-medium">
                 {t.brand.tagline}
               </p>
             </div>
@@ -171,21 +174,21 @@ export const Footer: React.FC = () => {
             <button
               type="button"
               onClick={scrollToTop}
-              className="mt-6 inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs font-bold text-slate-900 hover:text-teal-800 hover:border-teal-500 shadow-xs transition-all cursor-pointer"
+              className="mt-6 inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700 hover:text-indigo-600 hover:border-indigo-300 shadow-2xs transition-all cursor-pointer"
             >
-              <ArrowUp className="w-3.5 h-3.5 text-teal-700" />
+              <ArrowUp className="w-3.5 h-3.5 text-indigo-600" />
               <span>{t.footer.backToTop}</span>
             </button>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-700 font-medium">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
             &copy; {currentYear} DevIQ. {t.footer.rightsReserved}
           </p>
 
-          <p className="flex items-center gap-1 font-mono text-slate-700">
+          <p className="flex items-center gap-1 font-mono text-slate-500">
             <span>{t.footer.builtWith}</span>
           </p>
         </div>

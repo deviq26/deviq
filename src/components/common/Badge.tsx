@@ -21,21 +21,21 @@ export const Badge: React.FC<BadgeProps> = ({
   };
 
   const variantStyles = {
-    cyan: 'bg-teal-50 text-teal-950 border border-teal-300/80 shadow-2xs',
-    blue: 'bg-sky-50 text-sky-950 border border-sky-300/80 shadow-2xs',
-    purple: 'bg-purple-50 text-purple-950 border border-purple-300/80 shadow-2xs',
-    amber: 'bg-amber-50 text-amber-950 border border-amber-300/80 shadow-2xs',
-    emerald: 'bg-emerald-50 text-emerald-950 border border-emerald-300/80 shadow-2xs',
-    slate: 'bg-slate-100 text-slate-900 border border-slate-300 shadow-2xs',
+    cyan: 'bg-sky-50/80 text-sky-900 border border-sky-200 shadow-2xs font-bold',
+    blue: 'bg-indigo-50/80 text-indigo-900 border border-indigo-200 shadow-2xs font-bold',
+    purple: 'bg-purple-50/80 text-purple-900 border border-purple-200 shadow-2xs font-bold',
+    amber: 'bg-amber-50/80 text-amber-900 border border-amber-200 shadow-2xs font-bold',
+    emerald: 'bg-emerald-50/80 text-emerald-900 border border-emerald-200 shadow-2xs font-bold',
+    slate: 'bg-slate-100/90 text-slate-800 border border-slate-200 shadow-2xs font-semibold',
   };
 
   const dotColors = {
-    cyan: 'bg-teal-600',
-    blue: 'bg-sky-600',
-    purple: 'bg-purple-600',
-    amber: 'bg-amber-600',
-    emerald: 'bg-emerald-600',
-    slate: 'bg-slate-700',
+    cyan: 'bg-sky-500',
+    blue: 'bg-indigo-500',
+    purple: 'bg-purple-500',
+    amber: 'bg-amber-500',
+    emerald: 'bg-emerald-500',
+    slate: 'bg-slate-600',
   };
 
   return (

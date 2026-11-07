@@ -31,20 +31,20 @@ export const FaqPage: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="rounded-2xl bg-[#fdfcf9] border border-amber-950/10 overflow-hidden transition-all duration-200 hover:border-amber-950/20 shadow-xs"
+                className="rounded-2xl bg-white border border-slate-200/90 overflow-hidden transition-all duration-200 hover:border-indigo-300 shadow-xs"
               >
                 <button
                   type="button"
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full p-5 sm:p-6 text-start flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus:bg-amber-50/40"
+                  className="w-full p-5 sm:p-6 text-start flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus:bg-slate-50"
                   aria-expanded={isOpen}
                 >
                   <span className="text-sm sm:text-base font-bold text-slate-950 leading-snug">
                     {item.question[language]}
                   </span>
                   <div
-                    className={`p-1.5 rounded-lg bg-amber-50/70 text-slate-700 transition-transform duration-200 shrink-0 ${
-                      isOpen ? 'rotate-180 text-teal-800 bg-teal-50' : ''
+                    className={`p-1.5 rounded-lg bg-slate-100 text-slate-700 transition-transform duration-200 shrink-0 ${
+                      isOpen ? 'rotate-180 text-indigo-700 bg-indigo-50' : ''
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -52,7 +52,7 @@ export const FaqPage: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 pt-1 text-xs sm:text-sm text-slate-800 leading-relaxed border-t border-slate-200/60 bg-[#f9f7f2]/80 font-medium">
+                  <div className="px-5 pb-6 pt-1 text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-slate-100 bg-slate-50/50 font-normal">
                     <p>{item.answer[language]}</p>
                   </div>
                 )}
@@ -62,8 +62,8 @@ export const FaqPage: React.FC = () => {
         </div>
 
         {/* Bottom Help Box */}
-        <div className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-[#faf8f4] via-white to-teal-50/40 border border-teal-200/70 text-center flex flex-col items-center shadow-sm">
-          <div className="p-3 rounded-2xl bg-teal-50 text-teal-800 mb-3 border border-teal-200 shadow-2xs">
+        <div className="mt-12 p-8 rounded-3xl bg-white border border-slate-200 text-center flex flex-col items-center shadow-sm">
+          <div className="p-3 rounded-2xl bg-indigo-50 text-indigo-700 mb-3 border border-indigo-200 shadow-2xs">
             <HelpCircle className="w-6 h-6" />
           </div>
 

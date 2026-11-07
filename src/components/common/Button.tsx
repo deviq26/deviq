@@ -28,20 +28,20 @@ export const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   const sizeStyles = {
-    sm: 'px-3.5 py-1.5 text-xs rounded-lg gap-1.5 font-bold',
-    md: 'px-4 py-2.5 text-sm rounded-xl gap-2 font-bold',
-    lg: 'px-6 py-3.5 text-base rounded-xl gap-2.5 font-black',
+    sm: 'px-3.5 py-1.5 text-xs rounded-xl gap-1.5 font-bold',
+    md: 'px-4.5 py-2.5 text-sm rounded-xl gap-2 font-bold',
+    lg: 'px-6 py-3.5 text-base rounded-2xl gap-2.5 font-extrabold',
   };
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-teal-800 via-indigo-900 to-slate-950 text-white shadow-md shadow-slate-950/15 hover:shadow-lg hover:shadow-slate-950/25 hover:brightness-110 active:scale-[0.98]',
+      'bg-slate-950 hover:bg-slate-900 text-white border border-slate-800 shadow-[0_2px_8px_rgba(15,23,42,0.12)] hover:shadow-[0_8px_20px_-4px_rgba(15,23,42,0.22)] active:scale-[0.98]',
     secondary:
-      'bg-white hover:bg-[#faf9f6] text-slate-950 border border-[#d8d5cd] shadow-2xs hover:border-slate-400 active:scale-[0.98]',
+      'bg-white hover:bg-slate-50 text-slate-900 border border-slate-200/90 shadow-2xs hover:border-slate-300 active:scale-[0.98]',
     outline:
-      'bg-white hover:bg-teal-50 text-teal-900 border border-teal-700 shadow-2xs active:scale-[0.98]',
+      'bg-white hover:bg-indigo-50/60 text-indigo-700 border border-indigo-200/90 shadow-2xs hover:border-indigo-400 active:scale-[0.98]',
     ghost:
-      'bg-transparent hover:bg-slate-200/50 text-slate-900 hover:text-slate-950 border border-transparent',
+      'bg-transparent hover:bg-slate-100 text-slate-700 hover:text-slate-950 border border-transparent',
   };
 
   const baseStyles =

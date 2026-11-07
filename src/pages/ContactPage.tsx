@@ -26,11 +26,11 @@ export const ContactPage: React.FC = () => {
           {/* Direct Channels & Contact Info Column: 5 cols */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             {/* Direct Contact Card */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-[#fdfcf9] border border-amber-950/10 shadow-md">
+            <div className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
               <h3 className="text-base sm:text-lg font-bold text-slate-950 mb-2">
                 {t.contact.directChannelsTitle}
               </h3>
-              <p className="text-xs text-slate-800 mb-6 leading-relaxed font-medium">
+              <p className="text-xs text-slate-600 mb-6 leading-relaxed font-normal">
                 {t.contact.directChannelsSubtitle}
               </p>
 
@@ -40,13 +40,13 @@ export const ContactPage: React.FC = () => {
                   href={`https://wa.me/${CONTACT_CONFIG.whatsappNumber.replace(/[^0-9]/g, '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 p-3.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 transition-all group shadow-2xs"
+                  className="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/30 transition-all group shadow-2xs"
                 >
                   <div className="p-2.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 group-hover:scale-105 transition-transform shadow-2xs">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-700 font-semibold">
+                    <div className="text-xs text-slate-500 font-semibold">
                       {language === 'ar' ? 'تواصل عبر واتساب' : 'WhatsApp Direct'}
                     </div>
                     <div className="text-sm font-bold text-slate-950 font-mono mt-0.5">
@@ -58,13 +58,13 @@ export const ContactPage: React.FC = () => {
                 {/* Email Channel */}
                 <a
                   href={`mailto:${CONTACT_CONFIG.contactEmail}`}
-                  className="flex items-center gap-3.5 p-3.5 rounded-xl bg-white border border-slate-200 hover:border-teal-500 hover:bg-teal-50/40 transition-all group shadow-2xs"
+                  className="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 transition-all group shadow-2xs"
                 >
-                  <div className="p-2.5 rounded-lg bg-teal-50 text-teal-700 border border-teal-200 group-hover:scale-105 transition-transform shadow-2xs">
+                  <div className="p-2.5 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200 group-hover:scale-105 transition-transform shadow-2xs">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-700 font-semibold">
+                    <div className="text-xs text-slate-500 font-semibold">
                       {language === 'ar' ? 'البريد الإلكتروني' : 'Official Email'}
                     </div>
                     <div className="text-sm font-bold text-slate-950 font-mono mt-0.5">
@@ -74,12 +74,12 @@ export const ContactPage: React.FC = () => {
                 </a>
 
                 {/* Location */}
-                <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-white/70 border border-slate-200">
-                  <div className="p-2.5 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200 shadow-2xs">
+                <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50/80 border border-slate-200">
+                  <div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 shadow-2xs">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-700 font-semibold">
+                    <div className="text-xs text-slate-500 font-semibold">
                       {language === 'ar' ? 'نطاق العمل' : 'Service Reach'}
                     </div>
                     <div className="text-sm font-bold text-slate-900 mt-0.5">
@@ -91,23 +91,23 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Response Time & Guarantee Card */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-teal-50/90 via-[#fbf9f4] to-amber-50/70 border border-teal-200/80 shadow-sm">
-              <div className="flex items-center gap-2.5 mb-3 text-teal-950 font-bold">
-                <Clock className="w-4 h-4 text-teal-800" />
+            <div className="p-6 rounded-2xl bg-slate-900 text-white border border-slate-800 shadow-md">
+              <div className="flex items-center gap-2.5 mb-3 text-indigo-400 font-bold">
+                <Clock className="w-4 h-4 text-indigo-400" />
                 <span className="text-xs uppercase tracking-wider font-mono">
                   {t.contact.responseBadge}
                 </span>
               </div>
 
-              <p className="text-xs text-slate-800 leading-relaxed font-medium">
+              <p className="text-xs text-slate-300 leading-relaxed font-normal">
                 {language === 'ar'
                   ? 'يقوم فريق DevIQ بمراجعة كل طلب بدقة هندسية وتقديم تقدير تقني أولي ومقترحات الحلول خلال ساعات العمل.'
                   : 'The DevIQ engineering team reviews every request with technical rigor, delivering initial scoping and architecture advice promptly.'}
               </p>
 
-              <div className="mt-4 pt-4 border-t border-teal-200/60 flex items-center gap-2 text-xs text-slate-800 font-semibold">
-                <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-                <span>{language === 'ar' ? 'حماية تامة لسرية الأفكار والبيانات' : 'Non-Disclosure & Data Confidentiality'}</span>
+              <div className="mt-4 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs text-slate-300 font-medium">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>{language === 'ar' ? 'حماية تامة لسرية الأفكار والبيانات (NDA)' : 'Non-Disclosure & Data Confidentiality'}</span>
               </div>
             </div>
           </div>

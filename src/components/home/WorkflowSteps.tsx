@@ -4,19 +4,26 @@ import { SectionHeader } from '../common/SectionHeader';
 import { useLanguage } from '../../context/LanguageContext';
 
 export const WorkflowSteps: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const deliverables = [
+    language === 'ar' ? 'وثيقة المتطلبات (SRS) والمخطط الزمني' : 'SRS Spec & Roadmap',
+    language === 'ar' ? 'نماذج UI/UX التفاعلية ومعمارية النظام' : 'Interactive UI/UX & System Design',
+    language === 'ar' ? 'كود إنتاجي نظيف مع اختبارات شاملة' : 'Production Code & Automated Tests',
+    language === 'ar' ? 'نشر سحابي وتدريب ودعم فني مستمر' : 'Cloud Deployment & Ongoing SLA',
+  ];
 
   const renderStepIcon = (index: number) => {
     switch (index) {
       case 0:
-        return <MessageSquare className="w-5 h-5 text-teal-700" />;
+        return <MessageSquare className="w-5 h-5 text-blue-600" />;
       case 1:
-        return <LayoutTemplate className="w-5 h-5 text-blue-700" />;
+        return <LayoutTemplate className="w-5 h-5 text-indigo-600" />;
       case 2:
-        return <Code2 className="w-5 h-5 text-indigo-700" />;
+        return <Code2 className="w-5 h-5 text-purple-600" />;
       case 3:
       default:
-        return <Rocket className="w-5 h-5 text-purple-700" />;
+        return <Rocket className="w-5 h-5 text-emerald-600" />;
     }
   };
 
@@ -33,27 +40,37 @@ export const WorkflowSteps: React.FC = () => {
           {t.workflow.steps.map((step, index) => (
             <div
               key={index}
-              className="relative flex flex-col p-6 sm:p-7 rounded-2xl bg-white border border-[#e5e3dc] hover:border-teal-300 hover:shadow-lg hover:shadow-teal-900/5 transition-all duration-300 group shadow-2xs"
+              className="relative flex flex-col justify-between p-7 rounded-3xl bg-white border border-slate-200/90 hover:border-indigo-400 hover:shadow-[0_16px_36px_-6px_rgba(15,23,42,0.08)] transition-all duration-300 group shadow-xs hover:-translate-y-1"
             >
-              {/* Step number badge */}
-              <div className="flex items-center justify-between mb-5">
-                <span className="text-3xl font-black font-mono text-slate-300 group-hover:text-teal-700 transition-colors">
-                  {step.number}
-                </span>
-                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 shadow-2xs">
-                  {renderStepIcon(index)}
+              <div>
+                {/* Step number badge */}
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-3xl font-black font-mono text-slate-300 group-hover:text-indigo-600 transition-colors">
+                    {step.number}
+                  </span>
+                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 shadow-2xs group-hover:scale-105 transition-transform">
+                    {renderStepIcon(index)}
+                  </div>
                 </div>
+
+                {/* Title */}
+                <h3 className="text-base sm:text-lg font-black text-slate-950 mb-2.5 group-hover:text-indigo-700 transition-colors">
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal mb-5">
+                  {step.desc}
+                </p>
               </div>
 
-              {/* Title */}
-              <h3 className="text-base sm:text-lg font-black text-slate-950 mb-2.5 group-hover:text-teal-800 transition-colors">
-                {step.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal">
-                {step.desc}
-              </p>
+              {/* Deliverable Tag */}
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                <span className="text-slate-400 font-mono">Output:</span>
+                <span className="font-semibold text-slate-800 text-end">
+                  {deliverables[index]}
+                </span>
+              </div>
             </div>
           ))}
         </div>

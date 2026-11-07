@@ -30,8 +30,8 @@ export const AboutPage: React.FC = () => {
         />
 
         {/* Mission & Brand Philosophy Card */}
-        <div className="relative rounded-3xl p-8 sm:p-12 bg-[#fdfcf9] border border-amber-950/10 shadow-md mb-12 sm:mb-16 overflow-hidden">
-          <div className="absolute top-0 end-0 w-80 h-80 bg-amber-200/25 blur-3xl pointer-events-none" />
+        <div className="relative rounded-3xl p-8 sm:p-12 bg-white border border-slate-200/90 shadow-md mb-12 sm:mb-16 overflow-hidden">
+          <div className="absolute top-0 end-0 w-80 h-80 bg-indigo-100/30 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl">
             <Badge variant="cyan" dot size="sm" className="mb-3">
@@ -42,16 +42,16 @@ export const AboutPage: React.FC = () => {
               {t.about.missionDesc}
             </h3>
 
-            <p className="text-sm sm:text-base text-slate-800 leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
               {t.brand.description}
             </p>
           </div>
 
           {/* Quick Metrics */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-8 border-t border-slate-200/80">
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-8 border-t border-slate-100">
             {t.about.stats.map((stat, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                <div className="text-2xl sm:text-3xl font-black font-mono text-teal-800 mb-1">
+              <div key={idx} className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-2xs">
+                <div className="text-2xl sm:text-3xl font-black font-mono text-indigo-700 mb-1">
                   {stat.value}
                 </div>
                 <div className="text-xs text-slate-800 font-bold">
@@ -79,17 +79,17 @@ export const AboutPage: React.FC = () => {
             {t.about.values.map((val, idx) => (
               <div
                 key={idx}
-                className="p-6 sm:p-7 rounded-2xl bg-[#fdfcf9] border border-amber-950/10 shadow-xs hover:border-teal-500/40 hover:shadow-md transition-all group"
+                className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-indigo-400 hover:shadow-md transition-all group"
               >
-                <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-200/60 w-fit mb-5 group-hover:scale-105 transition-transform shadow-2xs">
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 w-fit mb-5 group-hover:scale-105 transition-transform shadow-2xs">
                   {renderValueIcon(idx)}
                 </div>
 
-                <h4 className="text-base sm:text-lg font-bold text-slate-950 mb-2.5 group-hover:text-teal-800 transition-colors">
+                <h4 className="text-base sm:text-lg font-bold text-slate-950 mb-2.5 group-hover:text-indigo-700 transition-colors">
                   {val.title}
                 </h4>
 
-                <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
                   {val.desc}
                 </p>
               </div>
@@ -98,7 +98,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* Engineering Standards */}
-        <div className="p-8 rounded-3xl bg-[#fdfcf9] border border-amber-950/10 shadow-xs">
+        <div className="p-8 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-950 mb-3">

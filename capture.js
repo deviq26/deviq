@@ -31,6 +31,7 @@ async function run() {
   await page.setViewport({ width: 1440, height: 900 });
   await page.goto('http://127.0.0.1:5173/', { waitUntil: 'networkidle0' });
   await page.screenshot({ path: path.join(ARTIFACTS_DIR, 'home-desktop-ar.png') });
+  await page.screenshot({ path: path.join(ARTIFACTS_DIR, 'home-fullpage-ar.png'), fullPage: true });
 
   // 2. Mobile Arabic Home Page
   console.log('Testing Mobile Viewport (Arabic RTL)...');

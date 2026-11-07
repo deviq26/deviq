@@ -25,7 +25,7 @@ export const WhyChooseUs: React.FC = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 relative z-10 bg-[#f1efe9]/70 border-y border-[#e5e2da]">
+    <section className="py-16 sm:py-24 relative z-10 bg-white/70 border-y border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={t.whyUs.sectionBadge}
@@ -37,20 +37,27 @@ export const WhyChooseUs: React.FC = () => {
           {t.whyUs.points.map((point, index) => (
             <div
               key={index}
-              className="p-6 sm:p-7 rounded-2xl bg-white border border-[#e5e3dc] hover:border-teal-300 hover:shadow-lg hover:shadow-teal-900/5 transition-all duration-200 group shadow-2xs"
+              className="p-7 rounded-2xl bg-white border border-slate-200/90 hover:border-indigo-400 hover:shadow-[0_16px_36px_-6px_rgba(15,23,42,0.08)] transition-all duration-300 group shadow-xs hover:-translate-y-1 flex flex-col justify-between"
             >
-              <div className="flex items-center gap-3.5 mb-4">
-                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 group-hover:scale-105 transition-transform shadow-2xs">
-                  {renderIcon(index)}
+              <div>
+                <div className="flex items-center gap-3.5 mb-4">
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 group-hover:scale-105 transition-transform shadow-2xs">
+                    {renderIcon(index)}
+                  </div>
+                  <h3 className="text-base font-black text-slate-950 group-hover:text-indigo-700 transition-colors">
+                    {point.title}
+                  </h3>
                 </div>
-                <h3 className="text-base font-black text-slate-950 group-hover:text-teal-800 transition-colors">
-                  {point.title}
-                </h3>
+
+                <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                  {point.desc}
+                </p>
               </div>
 
-              <p className="text-sm text-slate-800 leading-relaxed font-normal">
-                {point.desc}
-              </p>
+              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                <span>Enterprise Pillar 0{index + 1}</span>
+                <span className="text-emerald-600 font-bold">Verified Standard</span>
+              </div>
             </div>
           ))}
         </div>

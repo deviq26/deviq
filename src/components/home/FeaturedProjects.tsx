@@ -34,16 +34,16 @@ export const FeaturedProjects: React.FC = () => {
 
         {/* Filter Navigation Tabs */}
         <div className="flex items-center justify-center flex-wrap gap-2 mb-10">
-          <div className="inline-flex p-1 rounded-2xl bg-white border border-[#e5e3dc] shadow-xs backdrop-blur-md flex-wrap justify-center">
+          <div className="inline-flex p-1 rounded-2xl bg-slate-100/80 border border-slate-200/80 shadow-xs backdrop-blur-md flex-wrap justify-center">
             {filterTabs.map((tab) => (
               <button
                 key={tab.key}
                 type="button"
                 onClick={() => setSelectedCategory(tab.key)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                className={`px-4 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                   selectedCategory === tab.key
                     ? 'bg-slate-900 text-white shadow-xs'
-                    : 'text-slate-800 hover:text-slate-950 hover:bg-[#f5f3ec]'
+                    : 'text-slate-600 hover:text-slate-950 hover:bg-white/60'
                 }`}
               >
                 {tab.label}
